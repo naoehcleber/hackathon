@@ -4,6 +4,14 @@ Este projeto simula um sistema de monitoramento de densidade de usuários de Wi-
 
 O objetivo é visualizar, em tempo real, o fluxo de pessoas (simuladas como clientes conectados) através de um mapa de calor dinâmico (Heatmap) e marcadores de usuários.
 
+## Integrantes do Grupo
+
+| Função | Membro(s) |
+| :--- | :--- |
+| **Desenvolvedores** | Lucas Ribeiro, João Victor Rocha |
+| **Arquitetos** | Taísa Brito, Denilson Rafael, David |
+
+---
 ## Tecnologias Utilizadas
 
 | Camada | Tecnologia | Descrição |
