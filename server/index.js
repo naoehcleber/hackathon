@@ -5,7 +5,13 @@ const PORT = 3001;
 
 // Variável global que armazenará o último conjunto de dados gerado
 let simulatedData = []; 
-
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'https://alisha-lifelike-ozie.ngrok-free.dev' // adicione o domínio público do ngrok
+  ],
+  credentials: true
+}));
 // =======================================================
 // Passo I.2: AP_CONFIG (Mantido do Exemplo Anterior)
 // =======================================================
@@ -133,7 +139,7 @@ function updateDataPeriodically(intervalSeconds = 60) {
 
 
 // Inicializa a atualização periódica dos dados
-updateDataPeriodically(60); // Atualiza a cada 60 segundos (1 minuto)
+updateDataPeriodically(5); // Atualiza a cada 60 segundos (1 minuto)
 
 
 // =======================================================

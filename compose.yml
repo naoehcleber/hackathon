@@ -1,0 +1,59 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: backend
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+    networks:
+      - appnet
+    # sem ports: não precisamos expor no host; o proxy e o ngrok acessam pela rede docker
+
+  frontend:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_BASE_URL: "/api"   # usa caminho relativo via proxy
+    container_name: frontend
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    depends_on:
+      - backend
+    networks:
+      - appnet
+
+  proxy:
+    image: nginx:alpine
+    container_name: proxy
+    depends_on:
+      - frontend
+      - backend
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "8080:8080"      # expõe um único ponto de entrada
+    networks:
+      - appnet
+
+  ngrok:
+    image: ngrok/ngrok:latest
+    container_name: ngrok
+    depends_on:
+      - proxy
+    volumes:
+      - ./ngrok/ngrok.yml:/etc/ngrok/ngrok.yml:ro
+    command: ["start", "--all", "--config", "/etc/ngrok/ngrok.yml"]
+    ports:
+      - "4040:4040"      # dashboard local
+    networks:
+      - appnet
+
+networks:
+  appnet:
+    driver: bridge
