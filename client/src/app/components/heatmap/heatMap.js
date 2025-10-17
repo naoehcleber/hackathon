@@ -8,7 +8,7 @@ import { MapContainer, TileLayer, useMap, Circle } from 'react-leaflet';
 import './heatmap.css'; // Mantenha a importação dos seus estilos customizados
 
 // URL do seu backend REAL (que está simulando a aquisição de dados)
-const API_ENDPOINT = 'http://localhost:3001/api/densidade-wifi'; 
+const API_ENDPOINT = "http://localhost:3001/api/densidade-wifi"; 
 
 // ======================================================================
 // Componente Auxiliar para a Camada de Calor (Heat Layer)

@@ -66,7 +66,7 @@ function updateDataPeriodically(intervalSeconds = 10) {
 
 
 // Inicializa a atualização periódica dos dados
-updateDataPeriodically(10); // Atualiza a cada 60 segundos (1 minuto)
+updateDataPeriodically(60); // Atualiza a cada 60 segundos (1 minuto)
 
 
 // =======================================================
