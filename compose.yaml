@@ -1,3 +1,0 @@
-services:
-  sqlite:
-    image: imageName
