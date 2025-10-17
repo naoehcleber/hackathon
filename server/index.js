@@ -9,55 +9,7 @@ let simulatedData = [];
 // =======================================================
 // Passo I.2: AP_CONFIG (Mantido do Exemplo Anterior)
 // =======================================================
-const AP_CONFIG = [
-    {
-        id: 'AP-Recepcao',
-        name: 'Recepção Principal',
-        lat: -8.0578,      
-        lng: -34.8824,     
-        baseCount: 40,
-        variance: 15,
-        peakConfig: { 
-            active: true, 
-            timeWindow: [8, 9] 
-        }
-    },
-    {
-        id: 'AP-Sala-Reuniao',
-        name: 'Sala de Reunião Bloco A',
-        lat: -8.0585,
-        lng: -34.8819,
-        baseCount: 15,
-        variance: 10,
-        peakConfig: { 
-            active: true, 
-            timeWindow: [10, 12] 
-        }
-    },
-    {
-        id: 'AP-Cafeteria',
-        name: 'Cafeteria',
-        lat: -8.0570,
-        lng: -34.8830,
-        baseCount: 20,
-        variance: 10,
-        peakConfig: { 
-            active: true, 
-            timeWindow: [12, 14] 
-        }
-    },
-    {
-        id: 'AP-TI-Labs',
-        name: 'Laboratório de TI',
-        lat: -8.0590,
-        lng: -34.8825,
-        baseCount: 50,
-        variance: 25,
-        peakConfig: { 
-            active: false 
-        } 
-    }
-];
+const { AP_CONFIG } = require('./data');
 
 // =======================================================
 // Passo I.3: Lógica de Simulação (Mantida, mas agora é a "função pura" de geração)
@@ -114,7 +66,7 @@ function updateDataPeriodically(intervalSeconds = 10) {
 
 
 // Inicializa a atualização periódica dos dados
-updateDataPeriodically(60); // Atualiza a cada 60 segundos (1 minuto)
+updateDataPeriodically(10); // Atualiza a cada 60 segundos (1 minuto)
 
 
 // =======================================================
