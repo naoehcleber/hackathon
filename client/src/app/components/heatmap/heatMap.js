@@ -6,12 +6,14 @@ import React, { useEffect, useState, useMemo, useRef } from "react";
 import { MapContainer, TileLayer, useMap, Circle, CircleMarker } from "react-leaflet";
 import L from "leaflet";
 import "leaflet.heat";
+import dotenv from 'dotenv'
+
 // ⚠️ O CSS do Leaflet deve ser importado globalmente (ex.: em app/layout.tsx):
 // import "leaflet/dist/leaflet.css";
 import "./heatmap.css";
 
 // Endpoint único (removida a duplicidade)
-const API_ENDPOINT = "http://localhost:3001/api/densidade-wifi";
+const API_ENDPOINT = process.env.API_ENDPOINT;
 
 // ======================================================================
 // Função utilitária: distância Haversine (em metros)

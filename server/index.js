@@ -150,6 +150,5 @@ app.get('/api/densidade-wifi', (req, res) => {
 
 // Passo I.6: Rodar o Backend
 app.listen(PORT, () => {
-    console.log(`Backend de simulação rodando em http://localhost:${PORT}`);
-    console.log('Endpoint da API: http://localhost:3001/api/densidade-wifi');
+    
 });
