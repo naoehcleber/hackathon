@@ -1,4 +1,16 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+// next.config.js
 
-export default nextConfig;
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // Configuração do Proxy Reverso
+  async rewrites() {
+    return [
+      {
+        source: '/api/backend-proxy/:path*',
+        destination: 'http://localhost:3001/api/densidade-wifi/:path*',
+      },
+    ];
+  },
+};
+
+module.exports = nextConfig;
