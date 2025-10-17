@@ -13,7 +13,7 @@ import dotenv from 'dotenv'
 import "./heatmap.css";
 
 // Endpoint único (removida a duplicidade)
-const API_ENDPOINT = process.env.API_ENDPOINT;
+const API_ENDPOINT = "http://localhost:3001/api/densidade-wifi";
 
 // ======================================================================
 // Função utilitária: distância Haversine (em metros)
