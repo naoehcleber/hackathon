@@ -1,0 +1,47 @@
+/* src/app/components/heatmap/heatmap.css */
+
+/* O contêiner pai deve ter altura total se for a única coisa na tela */
+.heatmap-container {
+    width: 100%;
+    /* Altura definida, essencial para mapas */
+    height: 90vh; 
+    margin: 0 auto; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* Para posicionar a legenda */
+}
+
+/* Garante que o container do Leaflet ocupe todo o espaço */
+.leaflet-map-container {
+    height: 100%;
+    width: 100%;
+}
+
+.heatmap-loading {
+    text-align: center;
+    padding: 50px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Estilos para a legenda */
+.heatmap-legend {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000; /* Garante que fique acima do mapa */
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 0.9em;
+}
+
+.heatmap-legend p {
+    margin: 0 0 5px 0;
+    font-weight: bold;
+}
+
+/* Cores da legenda para referência visual */
+.legend-red { color: red; font-weight: bold; }
+.legend-lime { color: limegreen; font-weight: bold; }
+.legend-blue { color: blue; font-weight: bold; }
