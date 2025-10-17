@@ -9,9 +9,11 @@ export default function Home() {
       <h1 style={{ textAlign: 'center', padding: '10px' }}>
           Visualização de Densidade de Usuários
       </h1>
-      
+      <div>
+        <DynamicHeatMapWrapper />
+
+      </div>
       {/* Use o wrapper que garante o Client-Side Rendering */}
-      <DynamicHeatMapWrapper />
     </main>
   );
 }
